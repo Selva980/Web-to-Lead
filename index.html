@@ -1,39 +1,125 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f4f7fb, #e9eef5);
+      margin: 0;
+      padding: 0;
+    }
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+    .form-container {
+      max-width: 420px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 30px 35px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Df600000GYAvl" method="POST">
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1f3a5f;
+      font-size: 22px;
+    }
 
-<input type=hidden name="oid" value="00Df600000GYAvl">
-<input type="hidden" name="retURL" value="https://selva980.github.io/Web-to-Lead/thankyou.html">
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail" value="selva.b@idrms.tech">      -->
-<!--  ----------------------------------------------------------------------  -->
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccd6e0;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
 
-<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: #2b6cb0;
+      box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.15);
+      outline: none;
+    }
 
-<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+    input[type="submit"] {
+      width: 100%;
+      background: #2b6cb0;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    input[type="submit"]:hover {
+      background: #234e82;
+    }
 
-<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+    .form-footer {
+      margin-top: 15px;
+      font-size: 12px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
 
-City:<input  id="00Nf600000BXJnC" maxlength="20" name="00Nf600000BXJnC" size="20" type="text" /><br>
+<body>
 
-State:<input  id="00Nf600000BXZlR" maxlength="20" name="00Nf600000BXZlR" size="20" type="text" /><br>
+  <div class="form-container">
+    <h2>Contact Us</h2>
 
-<input type="submit" name="submit">
+    <!-- Salesforce Web-to-Lead Form -->
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Df600000GYAvl"
+          method="POST">
 
-</form>
+      <input type="hidden" name="oid" value="00Df600000GYAvl">
+      <input type="hidden" name="retURL" value="https://selva980.github.io/Web-to-Lead/thankyou.html">
+
+      <label for="first_name">First Name</label>
+      <input id="first_name" name="first_name" type="text" maxlength="40" required>
+
+      <label for="last_name">Last Name</label>
+      <input id="last_name" name="last_name" type="text" maxlength="80" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" maxlength="80" required>
+
+      <label for="company">Company</label>
+      <input id="company" name="company" type="text" maxlength="40" required>
+
+      <label for="city">City</label>
+      <input id="00Nf600000BXJnC" name="00Nf600000BXJnC" type="text" maxlength="20">
+
+      <label for="state">State</label>
+      <input id="00Nf600000BXZlR" name="00Nf600000BXZlR" type="text" maxlength="20">
+
+      <input type="submit" value="Submit">
+
+    </form>
+
+    <div class="form-footer">
+      We respect your privacy. Your information is safe with us.
+    </div>
+  </div>
+
+</body>
+</html>
+
